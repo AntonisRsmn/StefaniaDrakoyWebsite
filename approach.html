@@ -415,7 +415,7 @@
     <nav class="navbar navbar-expand-md navbar-custom py-3">
   <div class="container">
     <!-- Λογότυπο / Όνομα -->
-    <a class="navbar-brand mx-auto mx-md-0 text-center text-md-start" href="/" style="font-size: 1.6rem;">
+    <a class="navbar-brand mx-0 text-start" href="/" style="font-size: 1.6rem;">
       Στεφανία Δράκου
       <p class="text-white mb-0" style="font-size: 0.9rem;">Ψυχολόγος – Ψυχοθεραπεύτρια</p>
     </a>
@@ -447,12 +447,6 @@
     <a href="tel:+306989885396" class="btn call-btn d-none d-md-inline-block">Καλέστε Μας</a>
   </div>
 
-<!-- Call Button (mobile, centered under logo) -->
-<div class="d-md-none w-100 text-center mt-2">
-  <a href="tel:+306989885396" class="btn call-btn">
-    Καλέστε Μας
-  </a>
-</div>
 </nav>
 
     <!-- Hero Section -->
@@ -461,6 +455,11 @@
       <h1>
         Η ΠΡΟΣΕΓΓΙΣΗ ΜΟΥ
       </h1>
+
+      <!-- Mobile-only Call Button under hero text -->
+      <div class="d-md-none mt-3">
+        <a href="tel:+306989885396" class="btn call-btn">Καλέστε Μας</a>
+      </div>
 
       <!-- <h1>ΠΡΟΟΠΤΙΚΗ · ΟΡΑΤΙΚΗ · ΑΛΛΑΓΗ</h1>
       <p>
@@ -578,14 +577,20 @@
       // Set initial icon color
       icon.classList.add("white");
 
-      // Listen for Bootstrap collapse events to update icon color
-      menu.addEventListener("shown.bs.collapse", () => {
+      // Keep hamburger fixed and above sidebar while open and update icon color
+      menu.addEventListener("show.bs.collapse", () => {
         icon.classList.remove("white");
         icon.classList.add("black");
+        // Make the toggler fixed at the viewport top-right
+        toggler.classList.remove("position-absolute");
+        toggler.classList.add("position-fixed", "fixed-open");
       });
       menu.addEventListener("hidden.bs.collapse", () => {
         icon.classList.remove("black");
         icon.classList.add("white");
+        // Restore original positioning after closing
+        toggler.classList.remove("position-fixed", "fixed-open");
+        toggler.classList.add("position-absolute");
       });
     </script>
   </body>
