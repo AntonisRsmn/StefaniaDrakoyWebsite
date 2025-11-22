@@ -66,3 +66,57 @@ footer {
     font-size: 1.2rem;
   }
 }
+
+/* Professional footer styles (redesigned) */
+.site-footer {
+  background: #f6f4f1;
+  color: #4b4b4b;
+  font-size: 0.95rem;
+  margin-top: 40px;
+  padding: 48px 0 20px;
+  border-top: 1px solid rgba(0,0,0,0.03);
+}
+.site-footer a {
+  color: #4b4b4b !important;
+  text-decoration: none !important;
+}
+.site-footer a:visited { color: #4b4b4b !important; }
+.site-footer a:hover { color: #222 !important; text-decoration: underline !important; }
+
+.site-footer .footer-top { border-bottom: 1px solid rgba(0,0,0,0.04); padding-bottom: 28px; }
+.site-footer .footer-brand {
+  font-family: 'Georgia', serif;
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: #222;
+}
+.site-footer .footer-contact p { margin-bottom: 0.35rem; }
+.site-footer .footer-links ul { padding-left: 0; list-style: none; margin: 0; }
+.site-footer .footer-links li { margin-bottom: 10px; }
+
+/* Layout: three columns on desktop, stacked on mobile */
+.site-footer .footer-top { display: flex; gap: 2rem; align-items: flex-start; }
+.site-footer .footer-brand { margin-bottom: 0.5rem; }
+.site-footer .footer-contact p { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.35rem; }
+
+/* Desktop: keep links to the right and add subtle divider */
+@media (min-width: 768px) {
+  .site-footer .footer-brand { flex: 0 0 300px; }
+  .site-footer .footer-contact { flex: 1 1 auto; }
+  .site-footer .footer-links { flex: 0 0 220px; margin-left: auto; text-align: right; position: relative; }
+  .site-footer .footer-links::before { content: ''; position: absolute; left: -24px; top: 6px; bottom: 6px; width: 1px; background: rgba(0,0,0,0.04); }
+}
+
+/* Mobile: stack nicely */
+@media (max-width: 767.98px) {
+  .site-footer { padding: 32px 0 18px; }
+  .site-footer .footer-top { flex-direction: column; align-items: flex-start; }
+  .site-footer .footer-links ul { padding-left: 1rem; }
+  .site-footer .footer-links::before { display: none; }
+}
+
+.site-footer .footer-bottom { color: #9a9a9a; font-size: 0.9rem; padding-top: 16px; }
+
+/* Small polish: icon spacing for contact items */
+.site-footer .footer-contact a { color: inherit; }
+.site-footer .footer-contact p svg, .site-footer .footer-contact p img { margin-right: 8px; }
