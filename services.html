@@ -3,13 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="Imgs/cv-photo.webp" />
+    <link rel="icon" type="image/x-icon" href="cv-photo.webp" />
     <title>Υπηρεσίες · Στεφανία Δράκου</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
     <style>
       body {
         font-family: "Georgia", serif;
@@ -407,11 +406,6 @@
         text-decoration: underline;
       }
 
-      /* Nudge hamburger slightly lower on mobile for better alignment */
-      @media (max-width: 767.98px) {
-        .navbar-toggler { margin-top: 1.9rem !important; }
-      }
-
     </style>
   </head>
   <body>
@@ -419,7 +413,7 @@
     <nav class="navbar navbar-expand-md navbar-custom py-3">
   <div class="container">
     <!-- Λογότυπο / Όνομα -->
-    <a class="navbar-brand mx-0 text-start" href="/" style="font-size: 1.6rem;">
+    <a class="navbar-brand mx-auto mx-md-0 text-center text-md-start" href="/" style="font-size: 1.6rem;">
       Στεφανία Δράκου
       <p class="text-white mb-0" style="font-size: 0.9rem;">Ψυχολόγος – Ψυχοθεραπεύτρια</p>
     </a>
@@ -451,6 +445,12 @@
     <a href="tel:+306989885396" class="btn call-btn d-none d-md-inline-block">Καλέστε Μας</a>
   </div>
 
+<!-- Call Button (mobile, centered under logo) -->
+<div class="d-md-none w-100 text-center mt-2">
+  <a href="tel:+306989885396" class="btn call-btn">
+    Καλέστε Μας
+  </a>
+</div>
 </nav>
 
     <!-- Hero Section -->
@@ -459,11 +459,6 @@
       <h1>
         ΥΠΗΡΕΣΙΕΣ
       </h1>
-
-      <!-- Mobile-only Call Button under hero text -->
-      <div class="d-md-none mt-3">
-        <a href="tel:+306989885396" class="btn call-btn">Καλέστε Μας</a>
-      </div>
 
       <!-- <h1>ΠΡΟΟΠΤΙΚΗ · ΟΡΑΤΙΚΗ · ΑΛΛΑΓΗ</h1>
       <p>
@@ -560,34 +555,35 @@
     </section>
 
     <!-- Footer -->
-    <footer class="site-footer" id="footer">
+    <footer
+      id="footer"
+      style="background-color: #f4f1ed; padding: 40px 0; text-align: center"
+    >
       <div class="container">
-        <div class="row footer-top py-4">
-          <div class="col-md-4">
-            <div class="footer-brand">Στεφανία Δράκου</div>
-            <div class="text-muted">Ψυχολόγος – Ψυχοθεραπεύτρια</div>
-          </div>
-          <div class="col-md-4 footer-contact">
-            <h6>Επικοινωνία</h6>
-            <p>📧 <a href="mailto:info@stefaniadrakou.gr">info@stefaniadrakou.gr</a></p>
-            <p>📞 <a href="tel:+306989885396">+30 698 988 5396</a></p>
-          </div>
-          <div class="col-md-4 footer-links">
-            <h6>Χρήσιμοι Σύνδεσμοι</h6>
-            <ul>
-              <li><a href="/">Αρχική</a></li>
-              <li><a href="/services">Υπηρεσίες</a></li>
-              <li><a href="/approach">Προσέγγιση</a></li>
-              <li><a href="/resume">Βιογραφικό</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="footer-bottom text-center py-3">
-          <small>&copy; 2025 Στεφανία Δράκου. All rights reserved. Website by
-            <a href="https://rusman.gr" target="_blank">Antonios Rusman</a>.
-          </small>
-        </div>
+        <h5
+          style="
+            font-family: 'Georgia', serif;
+            font-weight: 500;
+            color: #6e6e7a;
+            margin-bottom: 20px;
+          "
+        >
+          Επικοινωνία
+        </h5>
+        <p style="color: #555; font-size: 1.05rem; margin-bottom: 8px">
+          📧 info@stefaniadrakou.gr
+        </p>
+        <p style="color: #555; font-size: 1.05rem">📞 +30 698 988 5396</p>
+        <hr style="max-width: 200px; margin: 30px auto; border-color: #ccc" />
+        <p style="color: #aaa; font-size: 0.9rem">
+          &copy; 2025 Στεφανία Δράκου. Website by
+          <a
+            href="https://rusman.gr"
+            target="_blank"
+            style="color: #878787; text-decoration: none"
+            >Antonios Rusman</a
+          >.
+        </p>
       </div>
     </footer>
 
@@ -601,20 +597,14 @@
       // Set initial icon color
       icon.classList.add("white");
 
-      // Keep hamburger fixed and above sidebar while open and update icon color
-      menu.addEventListener("show.bs.collapse", () => {
+      // Listen for Bootstrap collapse events to update icon color
+      menu.addEventListener("shown.bs.collapse", () => {
         icon.classList.remove("white");
         icon.classList.add("black");
-        // Make the toggler fixed at the viewport top-right
-        toggler.classList.remove("position-absolute");
-        toggler.classList.add("position-fixed", "fixed-open");
       });
       menu.addEventListener("hidden.bs.collapse", () => {
         icon.classList.remove("black");
         icon.classList.add("white");
-        // Restore original positioning after closing
-        toggler.classList.remove("position-fixed", "fixed-open");
-        toggler.classList.add("position-absolute");
       });
     </script>
   </body>
