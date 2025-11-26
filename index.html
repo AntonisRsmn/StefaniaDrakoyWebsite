@@ -9,6 +9,10 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
     <style>
       body,
       html {
@@ -166,7 +170,9 @@
         font-size: 0.9rem;
       }
 
-      .therapy-link:hover, .nav-link:hover, .forme:hover {
+      .therapy-link:hover,
+      .nav-link:hover,
+      .forme:hover {
         text-decoration: underline;
       }
 
@@ -198,7 +204,7 @@
           border: none;
           background: none;
         }
-        
+
         .navbar-toggler:focus {
           outline: none;
           box-shadow: none;
@@ -250,58 +256,172 @@
         text-decoration: underline;
       }
 
+      /* ------- FOOTER ------- */
+
+      .site-footer {
+        background: #f4f1ed;
+        color: #4a4a4a;
+        padding: 70px 0 45px;
+        font-family: "Georgia", serif;
+        border-top: 1px solid #e2ded8;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 60px;
+        text-align: center;
+      }
+
+      /* Titles */
+      .footer-title {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #6e6e7a;
+        margin-bottom: 5px;
+      }
+
+      .footer-sub {
+        color: #8b8b8b;
+        font-size: 0.95rem;
+      }
+
+      /* Section headings */
+      .footer-heading {
+        font-size: 1.05rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #6e6e7a;
+        margin-bottom: 15px;
+      }
+
+      /* Wrapper for links */
+      .footer-links-wrapper {
+        display: flex;
+        flex-direction: column; /* Mobile default = vertical */
+        gap: 10px;
+      }
+
+      /* Individual links */
+      .footer-links-wrapper a {
+        color: #7a7a7a;
+        text-decoration: none;
+        transition: 0.25s ease;
+        font-size: 0.95rem;
+      }
+
+      .footer-links-wrapper a:hover {
+        color: #b68263;
+      }
+
+      .footer-section p {
+        margin-bottom: 8px;
+        color: #7a7a7a;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        margin-top: 55px;
+        font-size: 0.9rem;
+        color: #8b8b8b;
+      }
+
+      .footer-bottom a {
+        color: #7a7a7a;
+        text-decoration: none;
+      }
+
+      .footer-bottom a:hover {
+        color: #b68263;
+      }
+
+      /* -------- Desktop -------- */
+      @media (min-width: 768px) {
+        .footer-links-wrapper {
+          flex-direction: row; /* Desktop = horizontal */
+          justify-content: center;
+          gap: 35px;
+        }
+      }
+
+      /* -------- Mobile -------- */
+      @media (max-width: 768px) {
+        .footer-grid {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+      }
     </style>
   </head>
   <body>
     <!-- Navigation -->
-<nav class="navbar navbar-expand-md navbar-custom py-3">
-  <div class="container">
-    <!-- Λογότυπο / Όνομα -->
-    <a class="navbar-brand mx-auto mx-md-0 text-center text-md-start" href="/" style="font-size: 1.6rem;">
-      Στεφανία Δράκου
-      <p class="text-white mb-0" style="font-size: 0.9rem;">Ψυχολόγος – Ψυχοθεραπεύτρια</p>
-    </a>
+    <nav class="navbar navbar-expand-md navbar-custom py-3">
+      <div class="container">
+        <!-- Λογότυπο / Όνομα -->
+        <a
+          class="navbar-brand mx-auto mx-md-0 text-center text-md-start"
+          href="/"
+          style="font-size: 1.6rem"
+        >
+          Στεφανία Δράκου
+          <p class="text-white mb-0" style="font-size: 0.9rem">
+            Ψυχολόγος – Ψυχοθεραπεύτρια
+          </p>
+        </a>
 
-    <!-- Toggler (πάνω δεξιά στο mobile) -->
-    <button class="navbar-toggler position-absolute top-0 end-0 mt-4 me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon white"></span>
-    </button>
+        <!-- Toggler (πάνω δεξιά στο mobile) -->
+        <button
+          class="navbar-toggler position-absolute top-0 end-0 mt-4 me-3"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon white"></span>
+        </button>
 
-    <!-- Menu -->
-    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item mx-2">
-          <a class="nav-link" href="/">Αρχική</a>
-        </li>
-        <li class="nav-item mx-2">
-          <a class="nav-link" href="/services">Υπηρεσίες</a>
-        </li>
-        <li class="nav-item mx-2">
-          <a class="nav-link" href="/approach">Προσέγγιση</a>
-        </li>
-        <li class="nav-item mx-2">
-          <a class="nav-link" href="/resume">Βιογραφικό</a>
-        </li>
-      </ul>
-    </div>
+        <!-- Menu -->
+        <div
+          class="collapse navbar-collapse justify-content-center"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="/">Αρχική</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="/services">Υπηρεσίες</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="/approach">Προσέγγιση</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="/resume">Βιογραφικό</a>
+            </li>
+          </ul>
+        </div>
 
-    <!-- Call Button -->
-    <a href="tel:+306989885396" class="btn call-btn d-none d-md-inline-block">Καλέστε Μας</a>
-  </div>
+        <!-- Call Button -->
+        <a
+          href="tel:+306989885396"
+          class="btn call-btn d-none d-md-inline-block"
+          >Καλέστε Μας</a
+        >
+      </div>
 
-<!-- Call Button (mobile, centered under logo) -->
-<div class="d-md-none w-100 text-center mt-2">
-  <a href="tel:+306989885396" class="btn call-btn">
-    Καλέστε Μας
-  </a>
-</div>
-</nav>
+      <!-- Call Button (mobile, centered under logo) -->
+      <div class="d-md-none w-100 text-center mt-2">
+        <a href="tel:+306989885396" class="btn call-btn"> Καλέστε Μας </a>
+      </div>
+    </nav>
 
     <!-- Hero Section -->
     <section class="hero-section">
-
       <h1>
-        ΣE ΜΑΤΙΑ ΓΕΜΑΤΑ <i>ΕΝΣΥΝΑΙΣΘΗΣΗ</i><br> Ο ΚΑΘΕ ΑΝΘΡΩΠΟΣ ΕΙΝΑΙ <i>ΤΕΧΝΗ</i>
+        ΣE ΜΑΤΙΑ ΓΕΜΑΤΑ <i>ΕΝΣΥΝΑΙΣΘΗΣΗ</i><br />
+        Ο ΚΑΘΕ ΑΝΘΡΩΠΟΣ ΕΙΝΑΙ <i>ΤΕΧΝΗ</i>
       </h1>
 
       <!-- <h1>ΠΡΟΟΠΤΙΚΗ · ΟΡΑΤΙΚΗ · ΑΛΛΑΓΗ</h1>
@@ -371,22 +491,31 @@
               Καλώς ήρθατε. Ονομάζομαι Στεφανία Δράκου.
             </h2>
             <p style="font-size: 1.1rem; color: #444; line-height: 1.8">
-              Η απόφαση να ξεκινήσει κανείς θεραπεία αποτελεί ένα ουσιαστικό και συνειδητό βήμα προς την προσωπική εξέλιξη και ψυχική ευημερία. Η επιλογή του κατάλληλου θεραπευτή, με τον οποίο θα αναπτυχθεί μια σχέση εμπιστοσύνης και συνεργασίας, είναι καθοριστικής σημασίας.
+              Η απόφαση να ξεκινήσει κανείς θεραπεία αποτελεί ένα ουσιαστικό και
+              συνειδητό βήμα προς την προσωπική εξέλιξη και ψυχική ευημερία. Η
+              επιλογή του κατάλληλου θεραπευτή, με τον οποίο θα αναπτυχθεί μια
+              σχέση εμπιστοσύνης και συνεργασίας, είναι καθοριστικής σημασίας.
             </p>
             <p style="font-size: 1.1rem; color: #444; line-height: 1.8">
-              Η προσέγγιση μου βασίζεται σε θεραπευτικά μοντέλα που επιτρέπουν τη βαθιά κατανόηση και επεξεργασία των σκέψεων, των συναισθημάτων και των μοτίβων συμπεριφοράς που επηρεάζουν την καθημερινή ζωή. Στόχος μου είναι η ενίσχυση της αυτογνωσίας, η ενδυνάμωση του ατόμου και η σταδιακή αλλαγή δυσλειτουργικών σχημάτων που συντηρούν τον ψυχικό πόνο.
+              Η προσέγγιση μου βασίζεται σε θεραπευτικά μοντέλα που επιτρέπουν
+              τη βαθιά κατανόηση και επεξεργασία των σκέψεων, των συναισθημάτων
+              και των μοτίβων συμπεριφοράς που επηρεάζουν την καθημερινή ζωή.
+              Στόχος μου είναι η ενίσχυση της αυτογνωσίας, η ενδυνάμωση του
+              ατόμου και η σταδιακή αλλαγή δυσλειτουργικών σχημάτων που
+              συντηρούν τον ψυχικό πόνο.
             </p>
             <p style="font-size: 1.1rem; color: #444; line-height: 1.8">
-              Λειτουργώ με συνέπεια, επαγγελματισμό και ενσυναίσθηση, προσφέροντας ένα ασφαλές και υποστηρικτικό θεραπευτικό πλαίσιο, στο οποίο ο θεραπευόμενος μπορεί να εκφραστεί αυθεντικά και με σεβασμό.
+              Λειτουργώ με συνέπεια, επαγγελματισμό και ενσυναίσθηση,
+              προσφέροντας ένα ασφαλές και υποστηρικτικό θεραπευτικό πλαίσιο,
+              στο οποίο ο θεραπευόμενος μπορεί να εκφραστεί αυθεντικά και με
+              σεβασμό.
             </p>
             <p style="font-size: 1.1rem; color: #444; line-height: 1.8">
-              Σας προσκαλώ να περιηγηθείτε στον ιστότοπό μου, ώστε να γνωρίσετε καλύτερα το επιστημονικό μου υπόβαθρο και την προσέγγισή μου στη θεραπευτική διαδικασία.
+              Σας προσκαλώ να περιηγηθείτε στον ιστότοπό μου, ώστε να γνωρίσετε
+              καλύτερα το επιστημονικό μου υπόβαθρο και την προσέγγισή μου στη
+              θεραπευτική διαδικασία.
             </p>
-            <a
-              href="/resume"
-              class="forme"
-              >Για μένα</a
-            >
+            <a href="/resume" class="forme">Για μένα</a>
           </div>
         </div>
       </div>
@@ -401,11 +530,13 @@
 
       <div class="container">
         <div class="row justify-content-center gap-5">
-
           <div class="col-md-4 col-sm-6 mb-4">
-            <img src="Imgs/therapy1.jpg" alt="Individual Therapy" class="therapy-img"
+            <img
+              src="Imgs/therapy1.jpg"
+              alt="Individual Therapy"
+              class="therapy-img"
             />
-            <h3 class="therapy-heading">Ατομική  Ψυχοθεραπεία</h3>
+            <h3 class="therapy-heading">Ατομική Ψυχοθεραπεία</h3>
             <p class="therapy-text">
               Βοηθώντας άτομα να βρουν περισσότερη ηρεμία, σύνδεση και νόημα.
             </p>
@@ -413,7 +544,11 @@
           </div>
 
           <div class="col-md-3 col-sm-6 mb-4">
-            <img src="Imgs/therapy2.jpg" alt="Couples Therapy" class="therapy-img" />
+            <img
+              src="Imgs/therapy2.jpg"
+              alt="Couples Therapy"
+              class="therapy-img"
+            />
             <h3 class="therapy-heading">Γονεϊκότητα</h3>
             <p class="therapy-text">
               Η σύγχρονη γονεϊκότητα φερνει νέες προκλήσεις και ευθύνες.
@@ -422,48 +557,52 @@
           </div>
 
           <div class="col-md-4 col-sm-6 mb-4">
-            <img src="Imgs/therapy3.jpg" alt="Couples Therapy" class="therapy-img" />
+            <img
+              src="Imgs/therapy3.jpg"
+              alt="Couples Therapy"
+              class="therapy-img"
+            />
             <h3 class="therapy-heading">Διαχείριση Εργασιακών Προκλήσεων</h3>
             <p class="therapy-text">
-              Στη σύγχρονη εποχή, η εργασία επηρεάζει έντονα την ψυχική μας υγεία,
+              Στη σύγχρονη εποχή, η εργασία επηρεάζει έντονα την ψυχική μας
+              υγεία,
             </p>
             <a href="/services" class="therapy-link">Μάθετε περισσότερα</a>
           </div>
-          
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer
-      id="footer"
-      style="background-color: #f4f1ed; padding: 40px 0; text-align: center"
-    >
-      <div class="container">
-        <h5
-          style="
-            font-family: 'Georgia', serif;
-            font-weight: 500;
-            color: #6e6e7a;
-            margin-bottom: 20px;
-          "
-        >
-          Επικοινωνία
-        </h5>
-        <p style="color: #555; font-size: 1.05rem; margin-bottom: 8px">
-          📧 info@stefaniadrakou.gr
-        </p>
-        <p style="color: #555; font-size: 1.05rem">📞 +30 698 988 5396</p>
-        <hr style="max-width: 200px; margin: 30px auto; border-color: #ccc" />
-        <p style="color: #aaa; font-size: 0.9rem">
-          &copy; 2025 Στεφανία Δράκου. Website by
-          <a
-            href="https://rusman.gr"
-            target="_blank"
-            style="color: #878787; text-decoration: none"
-            >Antonios Rusman</a
-          >.
-        </p>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <!-- Column 1 -->
+        <div class="footer-section">
+          <h3 class="footer-title">Στεφανία Δράκου</h3>
+          <p class="footer-sub">Ψυχολόγος – Ψυχοθεραπεύτρια</p>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="footer-section footer-links">
+          <h4 class="footer-heading">Σύνδεσμοι</h4>
+          <div class="footer-links-wrapper">
+            <a href="/">Αρχική</a>
+            <a href="/services">Υπηρεσίες</a>
+            <a href="/approach">Προσέγγιση</a>
+            <a href="/resume">Βιογραφικό</a>
+          </div>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="footer-section">
+          <h4 class="footer-heading">Επικοινωνία</h4>
+          <p>info@stefaniadrakou.gr</p>
+          <p>+30 698 988 5396</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        © 2025 Στεφανία Δράκου — Website by
+        <a href="https://rusman.gr" target="_blank">Antonios Rusman</a>
       </div>
     </footer>
 

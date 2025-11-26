@@ -67,18 +67,100 @@
         margin-bottom: 5px;
       }
 
-      footer {
-        background-color: #f4f1ed;
-        padding: 40px 0;
-        text-align: center;
-        margin-top: 60px;
+      /* ------- FOOTER ------- */
+
+      .site-footer {
+        background: #f4f1ed;
+        color: #4a4a4a;
+        padding: 70px 0 45px;
+        font-family: "Georgia", serif;
+        border-top: 1px solid #e2ded8;
       }
 
-      footer p,
-      footer a {
-        color: #555;
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 60px;
+        text-align: center;
+      }
+
+      /* Titles */
+      .footer-title {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #6e6e7a;
+        margin-bottom: 5px;
+      }
+
+      .footer-sub {
+        color: #8b8b8b;
         font-size: 0.95rem;
+      }
+
+      /* Section headings */
+      .footer-heading {
+        font-size: 1.05rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #6e6e7a;
+        margin-bottom: 15px;
+      }
+
+      /* Wrapper for links */
+      .footer-links-wrapper {
+        display: flex;
+        flex-direction: column; /* Mobile default = vertical */
+        gap: 10px;
+      }
+
+      /* Individual links */
+      .footer-links-wrapper a {
+        color: #7a7a7a;
         text-decoration: none;
+        transition: 0.25s ease;
+        font-size: 0.95rem;
+      }
+
+      .footer-links-wrapper a:hover {
+        color: #b68263;
+      }
+
+      .footer-section p {
+        margin-bottom: 8px;
+        color: #7a7a7a;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        margin-top: 55px;
+        font-size: 0.9rem;
+        color: #8b8b8b;
+      }
+
+      .footer-bottom a {
+        color: #7a7a7a;
+        text-decoration: none;
+      }
+
+      .footer-bottom a:hover {
+        color: #b68263;
+      }
+
+      /* -------- Desktop -------- */
+      @media (min-width: 768px) {
+        .footer-links-wrapper {
+          flex-direction: row; /* Desktop = horizontal */
+          justify-content: center;
+          gap: 35px;
+        }
+      }
+
+      /* -------- Mobile -------- */
+      @media (max-width: 768px) {
+        .footer-grid {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
       }
 
       /* Mobile-only navbar override */
@@ -545,36 +627,36 @@
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer
-      id="footer"
-      style="background-color: #f4f1ed; padding: 40px 0; text-align: center"
-    >
-      <div class="container">
-        <h5
-          style="
-            font-family: 'Georgia', serif;
-            font-weight: 500;
-            color: #6e6e7a;
-            margin-bottom: 20px;
-          "
-        >
-          Επικοινωνία
-        </h5>
-        <p style="color: #555; font-size: 1.05rem; margin-bottom: 8px">
-          📧 info@stefaniadrakou.gr
-        </p>
-        <p style="color: #555; font-size: 1.05rem">📞 +30 698 988 5396</p>
-        <hr style="max-width: 200px; margin: 30px auto; border-color: #ccc" />
-        <p style="color: #aaa; font-size: 0.9rem">
-          &copy; 2025 Στεφανία Δράκου. Website by
-          <a
-            href="https://rusman.gr"
-            target="_blank"
-            style="color: #878787; text-decoration: none"
-            >Antonios Rusman</a
-          >.
-        </p>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <!-- Column 1 -->
+        <div class="footer-section">
+          <h3 class="footer-title">Στεφανία Δράκου</h3>
+          <p class="footer-sub">Ψυχολόγος – Ψυχοθεραπεύτρια</p>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="footer-section footer-links">
+          <h4 class="footer-heading">Σύνδεσμοι</h4>
+          <div class="footer-links-wrapper">
+            <a href="/">Αρχική</a>
+            <a href="/services">Υπηρεσίες</a>
+            <a href="/approach">Προσέγγιση</a>
+            <a href="/resume">Βιογραφικό</a>
+          </div>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="footer-section">
+          <h4 class="footer-heading">Επικοινωνία</h4>
+          <p>info@stefaniadrakou.gr</p>
+          <p>+30 698 988 5396</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        © 2025 Στεφανία Δράκου — Website by
+        <a href="https://rusman.gr" target="_blank">Antonios Rusman</a>
       </div>
     </footer>
 
