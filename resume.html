@@ -3,12 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="cv-photo.webp" />
+    <link rel="icon" type="image/x-icon" href="Imgs/cv-photo.webp" />
     <title>Βιογραφικό - Στεφανία Δράκου</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="styles.css" />
     <style>
       body {
         font-family: "Georgia", serif;
@@ -423,6 +424,20 @@
         text-decoration: underline;
       }
 
+      /* Keep hamburger above sidebar when open */
+      @media (max-width: 767.98px) {
+        /* Sidebar slightly below the hamburger's z-index */
+        .navbar-collapse {
+          z-index: 998;
+        }
+        /* Applied only while menu is open via JS */
+        .navbar-toggler.fixed-open {
+          z-index: 999 !important;
+        }
+        /* Nudge hamburger slightly lower for alignment */
+        .navbar-toggler { margin-top: 1.9rem !important; }
+      }
+
     </style>
   </head>
   <body>
@@ -430,7 +445,7 @@
     <nav class="navbar navbar-expand-md navbar-custom py-3">
   <div class="container">
     <!-- Λογότυπο / Όνομα -->
-    <a class="navbar-brand mx-auto mx-md-0 text-center text-md-start" href="/" style="font-size: 1.6rem;">
+    <a class="navbar-brand mx-0 text-start" href="/" style="font-size: 1.6rem;">
       Στεφανία Δράκου
       <p class="text-white mb-0" style="font-size: 0.9rem;">Ψυχολόγος – Ψυχοθεραπεύτρια</p>
     </a>
@@ -458,39 +473,37 @@
       </ul>
     </div>
 
-    <!-- Call Button -->
-    <a href="tel:+306989885396" class="btn call-btn d-none d-md-inline-block">Καλέστε Μας</a>
-  </div>
+    <!-- Footer -->
+    <footer class="site-footer" id="footer">
+      <div class="container">
+        <div class="row footer-top py-4">
+          <div class="col-md-4">
+            <div class="footer-brand">Στεφανία Δράκου</div>
+            <div class="text-muted">Ψυχολόγος – Ψυχοθεραπεύτρια</div>
+          </div>
+          <div class="col-md-4 footer-contact">
+            <h6>Επικοινωνία</h6>
+            <p>📧 <a href="mailto:info@stefaniadrakou.gr">info@stefaniadrakou.gr</a></p>
+            <p>📞 <a href="tel:+306989885396">+30 698 988 5396</a></p>
+          </div>
+          <div class="col-md-4 footer-links">
+            <h6>Χρήσιμοι Σύνδεσμοι</h6>
+            <ul>
+              <li><a href="/">Αρχική</a></li>
+              <li><a href="/services">Υπηρεσίες</a></li>
+              <li><a href="/approach">Προσέγιση</a></li>
+              <li><a href="/resume">Βιογραφικό</a></li>
+            </ul>
+          </div>
+        </div>
 
-<!-- Call Button (mobile, centered under logo) -->
-<div class="d-md-none w-100 text-center mt-2">
-  <a href="tel:+306989885396" class="btn call-btn">
-    Καλέστε Μας
-  </a>
-</div>
-</nav>
-
-    <!-- Hero Section -->
-    <section class="hero-section">
-
-      <h1>
-        ΣΧΕΤΙΚΑ ΜΕ ΕΜΕΝΑ
-      </h1>
-
-      <!-- <h1>ΠΡΟΟΠΤΙΚΗ · ΟΡΑΤΙΚΗ · ΑΛΛΑΓΗ</h1>
-      <p>
-        Βρείτε μεγαλύτερη ειρήνη.<br />
-        Νιώστε πιο συνδεδεμένοι.<br />
-        Ζήστε πιο ουσιαστικά.
-      </p> -->
-    </section>
-
-    <!-- Resume Section -->
-    <section class="container py-5">
-      <h2 class="section-heading"></h2>
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <div class="service-box">
+        <div class="footer-bottom text-center py-3">
+          <small>&copy; 2025 Στεφανία Δράκου. All rights reserved. Website by
+            <a href="https://rusman.gr" target="_blank">Antonios Rusman</a>.
+          </small>
+        </div>
+      </div>
+    </footer>
             <h5>Δράκου Στεφανία</h5>
 
             <p><strong>Ψυχολόγος - Ψυχοθεραπεύτρια</strong></p>
@@ -507,7 +520,7 @@
               στην Υποκριτική στην Ανώτερη Δραματική Σχολή του Γ. Θεοδοσιάδη,
               έχει εμπλουτίσει την κατανόηση της ανθρώπινης συμπεριφοράς και των
               συναισθημάτων. Αυτή η μοναδική συνδυαστική προσέγγιση μου
-              επιτρέπει να προσεγγίζω τους πελάτες με ενσυναίσθηση και
+              επιτρέπει να προσεγγίζω τους ανθρώπους με ενσυναίσθηση και
               κατανόηση.
             </p>
 
@@ -571,7 +584,7 @@
           <a
             href="https://rusman.gr"
             target="_blank"
-            style="color: #878787; text-decoration: none"
+            style="color: #000000; text-decoration: none"
             >Antonios Rusman</a
           >.
         </p>
@@ -588,14 +601,20 @@
       // Set initial icon color
       icon.classList.add("white");
 
-      // Listen for Bootstrap collapse events to update icon color
-      menu.addEventListener("shown.bs.collapse", () => {
+      // Keep hamburger fixed and above sidebar while open and update icon color
+      menu.addEventListener("show.bs.collapse", () => {
         icon.classList.remove("white");
         icon.classList.add("black");
+        // Make the toggler fixed at the viewport top-right
+        toggler.classList.remove("position-absolute");
+        toggler.classList.add("position-fixed", "fixed-open");
       });
       menu.addEventListener("hidden.bs.collapse", () => {
         icon.classList.remove("black");
         icon.classList.add("white");
+        // Restore original positioning after closing
+        toggler.classList.remove("position-fixed", "fixed-open");
+        toggler.classList.add("position-absolute");
       });
     </script>
   </body>
